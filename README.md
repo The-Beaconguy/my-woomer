@@ -31,12 +31,12 @@ woomer [OPTIONS]
 Then install it 
 
 ```nix
-        modules = [
-          ({pkgs, ...}: {
-            environment.systemPackages = [
-              inputs.woomer.packages.${system}.default
-            ];
-          })
+modules = [
+    ({pkgs, ...}: {
+      environment.systemPackages = [
+        inputs.woomer.packages.${system}.default
+      ];
+    })
 ```
 
 Can you use Home-manger as well
@@ -58,7 +58,6 @@ wayland, xkbcommon, EGL and gbm.
 ```
 cargo build --release
 ./target/release/woomer
-
 ```
 
 At runtime you need a working OpenGL 3.3 driver and a compositor that supports `wlr-layer-shell` and screen capture. And as of writing this, GNOME's compositor does not support layer-shell, so woomer won't run there.
