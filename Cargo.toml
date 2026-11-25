@@ -1,13 +1,18 @@
 [package]
 name = "woomer"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-image = "0.25.9"
-libwayshot = { git = "https://github.com/waycrate/wayshot", branch = "freeze-feat-andreas" }
-raylib = { version = "5.5.1", features = ["wayland", "opengl_33"] }
+# The `freeze-feat-andreas` branch woomer used no longer exists upstream, so use the released crate.
+libwayshot = "0.10"
+smithay-client-toolkit = "0.19"
+wayland-client = "0.31"
+wayland-backend = { version = "0.3", features = ["client_system"] }
+wayland-protocols = { version = "0.32", features = ["client", "staging"] }
+wayland-egl = "0.32"
+khronos-egl = { version = "6", features = ["dynamic"] }
+glow = "0.14"
+
 [features]
 dev = []
